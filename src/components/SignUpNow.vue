@@ -1,29 +1,53 @@
 <template>
-  <v-container id="signupnow" class="fill-height container signupnow-container" fluid>
+  <v-container
+    id="signupnow"
+    class="fill-height container signupnow-container"
+    fluid
+  >
     <div class="title-wrapper">
       <div class="title-text">Let’s talk</div>
-      <div
-        class="text-subtitle-1"
-      >Leave your contact details below and we can kick start our process</div>
+      <div class="text-subtitle-1">
+        Leave your contact details below and we can kick start our process
+      </div>
     </div>
 
     <v-form class="form-wrapper max-width" ref="form" v-model="valid">
       <v-container>
         <v-row>
           <v-col cols="12" md="6">
-            <v-text-field v-model="firstname" :rules="nameRules" label="First name" required></v-text-field>
+            <v-text-field
+              v-model="firstname"
+              :rules="nameRules"
+              label="First name"
+              required
+            ></v-text-field>
           </v-col>
 
           <v-col cols="12" md="6">
-            <v-text-field v-model="lastname" :rules="nameRules" label="Last name" required></v-text-field>
+            <v-text-field
+              v-model="lastname"
+              :rules="nameRules"
+              label="Last name"
+              required
+            ></v-text-field>
           </v-col>
 
           <v-col cols="12" md="6">
-            <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+            <v-text-field
+              v-model="email"
+              :rules="emailRules"
+              label="E-mail"
+              required
+            ></v-text-field>
           </v-col>
 
           <v-col cols="12" md="6">
-            <v-text-field v-model="phone" :rules="phoneRules" label="Phone" required></v-text-field>
+            <v-text-field
+              v-model="phone"
+              :rules="phoneRules"
+              label="Phone"
+              required
+            ></v-text-field>
           </v-col>
 
           <v-col cols="12">
@@ -36,7 +60,9 @@
           </v-col>
 
           <v-col cols="12">
-            <div class="text-subtitle-1">What type of business are you? (select all that applies)</div>
+            <div class="text-subtitle-1">
+              What type of business are you? (select all that applies)
+            </div>
           </v-col>
 
           <v-col cols="12">
@@ -44,27 +70,37 @@
               v-model="businessType"
               label="Aspiring F&B business"
               value="Aspiring F&B business"
-              :error-messages="(isBusinessTypeError && businessTypeErrorMsg) || ``"
+              :error-messages="
+                (isBusinessTypeError && businessTypeErrorMsg) || ``
+              "
             ></v-checkbox>
             <v-checkbox
               v-model="businessType"
               label="Existing F&B business"
               value="Existing F&B business"
-              :error-messages="(isBusinessTypeError && businessTypeErrorMsg) || ``"
+              :error-messages="
+                (isBusinessTypeError && businessTypeErrorMsg) || ``
+              "
             ></v-checkbox>
             <v-checkbox
               v-model="businessType"
               label="Restaurant chain"
               value="Restaurant chain"
-              :error-messages="(isBusinessTypeError && businessTypeErrorMsg) || ``"
+              :error-messages="
+                (isBusinessTypeError && businessTypeErrorMsg) || ``
+              "
             ></v-checkbox>
-            <v-text-field v-model="otherBusinessType" label="Others (Please specify)"></v-text-field>
+            <v-text-field
+              v-model="otherBusinessType"
+              label="Others (Please specify)"
+            ></v-text-field>
           </v-col>
 
           <v-col cols="12">
-            <div
-              class="text-subtitle-1"
-            >What type of F&B business are you looking at? (select all that applies)</div>
+            <div class="text-subtitle-1">
+              What type of F&B business are you looking at? (select all that
+              applies)
+            </div>
           </v-col>
 
           <v-col cols="12">
@@ -92,13 +128,17 @@
               value="Bakery"
               :error-messages="(isFNBTypeError && fNBTypeErrorMsg) || ``"
             ></v-checkbox>
-            <v-text-field v-model="otherBusinessType" label="Others (Please specify)"></v-text-field>
+            <v-text-field
+              v-model="otherBusinessType"
+              label="Others (Please specify)"
+            ></v-text-field>
           </v-col>
 
           <v-col cols="12">
-            <div
-              class="text-subtitle-1"
-            >Which areas (within Klang Valley) are you looking to serve? (select all that applies)</div>
+            <div class="text-subtitle-1">
+              Which areas (within Klang Valley) are you looking to serve?
+              (select all that applies)
+            </div>
           </v-col>
 
           <v-col cols="12">
@@ -174,7 +214,10 @@
               value="Subang Jaya"
               :error-messages="(isServeAreaError && serveAreaError) || ``"
             ></v-checkbox>
-            <v-text-field v-model="otherServeArea" label="Others (Please specify)"></v-text-field>
+            <v-text-field
+              v-model="otherServeArea"
+              label="Others (Please specify)"
+            ></v-text-field>
           </v-col>
         </v-row>
 
@@ -187,50 +230,51 @@
 </template>
 
 <script>
-import checkIsMobile from "../mixin/checkIsMobile";
+import checkIsMobile from '../mixin/checkIsMobile';
 
 export default {
   mixins: [checkIsMobile],
   data() {
     return {
       valid: true,
-      email: "",
-      lastname: "",
-      firstname: "",
-      phone: "",
-      company: "",
+      email: '',
+      lastname: '',
+      firstname: '',
+      phone: '',
+      company: '',
       businessType: [],
-      otherBusinessType: "",
-      businessTypeErrorMsg: "",
+      otherBusinessType: '',
+      businessTypeErrorMsg: '',
       fNBType: [],
-      otherFNBType: "",
-      fNBTypeErrorMsg: "",
+      otherFNBType: '',
+      fNBTypeErrorMsg: '',
       serveArea: [],
-      otherServeArea: "",
-      serveAreaError: "",
-      phoneRules: [v => !!v || "Phone is required"],
-      companyRules: [v => !!v || "Company is required"],
-      nameRules: [v => !!v || "Name is required"],
+      otherServeArea: '',
+      serveAreaError: '',
+      phoneRules: [v => !!v || 'Phone is required'],
+      companyRules: [v => !!v || 'Company is required'],
+      nameRules: [v => !!v || 'Name is required'],
       emailRules: [
-        v => !!v || "E-mail is required",
-        v => /.+@.+\..+/.test(v) || "E-mail must be valid"
-      ]
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
     };
   },
   methods: {
     async submit(payload) {
-      const url = `https://ca2bdh2iqd.execute-api.ap-southeast-1.amazonaws.com/default/postContactDetails`;
+      const url =
+        'https://ca2bdh2iqd.execute-api.ap-southeast-1.amazonaws.com/default/postContactDetails';
       const response = await fetch(url, {
-        method: "POST",
-        mode: "cors",
-        cache: "no-cache",
-        credentials: "same-origin",
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
-      console.log(`response`, response);
+      console.log('response', response);
       return response.json();
     },
     async handleSubmit() {
@@ -238,21 +282,21 @@ export default {
         !this.$refs.form.validate(),
         this.isBusinessTypeError,
         this.isFNBTypeError,
-        this.isServeAreaError
+        this.isServeAreaError,
       ];
       this.$refs.form.validate();
 
-      console.log(`this.isFNBTypeError`, this.isFNBTypeError);
+      console.log('this.isFNBTypeError', this.isFNBTypeError);
       if (this.isBusinessTypeError) {
-        this.businessTypeErrorMsg = "Please select your business";
+        this.businessTypeErrorMsg = 'Please select your business';
       }
 
       if (this.isFNBTypeError) {
-        this.fNBTypeErrorMsg = "Please select your F&B business";
+        this.fNBTypeErrorMsg = 'Please select your F&B business';
       }
 
       if (this.isServeAreaError) {
-        this.serveAreaError = "Please select your area";
+        this.serveAreaError = 'Please select your area';
       }
 
       if (errors.some(error => error)) {
@@ -267,12 +311,12 @@ export default {
         company: this.company,
         businessType: [...this.businessType, this.otherBusinessType],
         fNBType: [...this.fNBType, this.otherFNBType],
-        serveArea: [...this.serveArea, this.otherServeArea]
+        serveArea: [...this.serveArea, this.otherServeArea],
       };
 
       await this.submit(payload);
-      this.$swal("Your request has been submited!");
-    }
+      this.$swal('Your request has been submited!');
+    },
   },
   computed: {
     isBusinessTypeError() {
@@ -283,8 +327,8 @@ export default {
     },
     isServeAreaError() {
       return !this.serveArea.length && !this.otherServeArea;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -292,11 +336,12 @@ export default {
 .title {
   &-text {
     font-size: 48px;
-    text-align: center;
   }
 
   &-wrapper {
     margin: 0 auto;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -310,4 +355,3 @@ export default {
   }
 }
 </style>
-

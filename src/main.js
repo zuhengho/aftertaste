@@ -1,18 +1,19 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from "vue";
-import App from "./App";
-
-import VueSweetalert2 from "vue-sweetalert2";
-import "sweetalert2/dist/sweetalert2.min.css";
+import Vue from 'vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 // for vutify
-import Vuetify from "vuetify";
-import "vuetify/dist/vuetify.min.css";
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
+
+import App from './App';
+
 const vuetifyOptions = {
   icons: {
-    iconfont: "mdiSvg" // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
-  }
+    iconfont: 'mdiSvg', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+  },
 };
 
 Vue.use(VueSweetalert2);
@@ -22,8 +23,8 @@ Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
-  el: "#app",
+  el: '#app',
   vuetify: new Vuetify(vuetifyOptions),
   components: { App },
-  template: "<App/>"
+  template: '<App/>',
 });

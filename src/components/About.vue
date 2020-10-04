@@ -1,29 +1,41 @@
 <template>
   <v-container id="about" class="fill-height container about-container" fluid>
     <div class="about-wrapper max-width">
-      <v-img class="about-logo" :src="logoUrl" @click="slideTo('#landing')" contain/>
+      <v-img
+        class="about-logo"
+        :src="logoUrl"
+        @click="slideTo('#landing')"
+        contain
+      />
 
       <div class="about-desc">
-        <span>Aftertaste cloud kitchen will be a subscription-based, fully equipped kitchen that helps our clients to operate delivery-only restaurants. Our mission is to create an ecosystem that empowers the sustainable growth of delivery-only kitchens.</span>
-        <v-btn class="about-button" @click="slideTo('#signupnow')">Let's talk</v-btn>
+        <span
+          >Aftertaste cloud kitchen will be a subscription-based, fully equipped
+          kitchen that helps our clients to operate delivery-only restaurants.
+          Our mission is to create an ecosystem that empowers the sustainable
+          growth of delivery-only kitchens.</span
+        >
+        <v-btn class="about-button" @click="slideTo('#signupnow')"
+          >Let's talk</v-btn
+        >
       </div>
     </div>
   </v-container>
 </template>
 
 <script>
-import aftertastePng from "../assets/aftertaste-logo.png";
-import checkIsMobile from "../mixin/checkIsMobile";
+import aftertastePng from '../assets/aftertaste-logo.png';
+import checkIsMobile from '../mixin/checkIsMobile';
 
 export default {
   mixins: [checkIsMobile],
   data() {
     return {
-      logoUrl: aftertastePng
+      logoUrl: aftertastePng,
     };
   },
   methods: {
-    slideTo(id = "") {
+    slideTo(id = '') {
       const appBarHeight = this.mixinIsMobile ? 56 : 64;
       console.log(appBarHeight, this.mixinIsMobile);
       const elePosition = document.querySelector(id).getBoundingClientRect()
@@ -32,10 +44,10 @@ export default {
 
       window.scrollTo({
         top: scrollPosition,
-        behavior: "smooth"
+        behavior: 'smooth',
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -43,10 +55,6 @@ export default {
 .about {
   &-container {
     justify-content: center;
-
-    @media only screen and (max-width: 600px) {
-      height: auto;
-    }
   }
 
   &-wrapper {
@@ -66,6 +74,7 @@ export default {
   }
 
   &-logo {
+    width: 100%;
     grid-area: logo;
     max-width: 400px;
   }
@@ -83,5 +92,3 @@ export default {
   }
 }
 </style>
-
-

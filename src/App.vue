@@ -1,27 +1,27 @@
 <template>
   <v-app>
-    <Header/>
+    <Header />
 
     <v-main>
-      <Landing/>
+      <Landing />
 
-      <About/>
+      <About />
 
-      <WhyUs/>
+      <WhyUs />
 
-      <SignUpNow/>
+      <SignUpNow />
     </v-main>
 
-    <footer id="footer"/>
+    <footer id="footer" />
   </v-app>
 </template>
 
 <script>
-import Header from "./components/layout/header.vue";
-import Landing from "./components/Landing.vue";
-import About from "./components/About.vue";
-import WhyUs from "./components/WhyUs.vue";
-import SignUpNow from "./components/SignUpNow.vue";
+import Header from './components/layout/header';
+import Landing from './components/Landing';
+import About from './components/About';
+import WhyUs from './components/WhyUs';
+import SignUpNow from './components/SignUpNow';
 
 export default {
   components: {
@@ -29,8 +29,8 @@ export default {
     Landing,
     WhyUs,
     SignUpNow,
-    About
-  }
+    About,
+  },
 };
 </script>
 
@@ -43,6 +43,11 @@ html {
 // Fix the bugs of vuetify
 .v-main {
   height: 100vh;
+}
+
+.fill-height {
+  height: auto;
+  min-height 100%;
 }
 
 .max-width {

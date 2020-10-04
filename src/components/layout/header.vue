@@ -46,19 +46,19 @@
 </template>
 
 <script>
-import aftertastePng from "../../assets/aftertaste-logo-variation-3.png";
-import checkIsMobile from "../../mixin/checkIsMobile";
+import aftertastePng from '../../assets/aftertaste-logo-variation-3.png';
+import checkIsMobile from '../../mixin/checkIsMobile';
 
 export default {
   mixins: [checkIsMobile],
   data() {
     return {
       drawer: false,
-      logoUrl: aftertastePng
+      logoUrl: aftertastePng,
     };
   },
   methods: {
-    slideTo(id = "") {
+    slideTo(id = '') {
       const appBarHeight = this.mixinIsMobile ? 56 : 64;
       console.log(appBarHeight, this.mixinIsMobile);
       const elePosition = document.querySelector(id).getBoundingClientRect()
@@ -67,10 +67,10 @@ export default {
 
       window.scrollTo({
         top: scrollPosition,
-        behavior: "smooth"
+        behavior: 'smooth',
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,9 +1,10 @@
+/* eslint-disable */
 <template>
   <v-container
     id="landing"
     class="fill-height container"
     fluid
-    :style="{'--bgImage': `url(${ghostKitchenUrl})`}"
+    :style="{ '--bgImage': `url(${ghostKitchenUrl})` }"
   >
     <v-row align="center" justify="center">
       <div class="landing-text">
@@ -17,16 +18,16 @@
 </template>
 
 <script>
-import ghostKitchen from "../assets/ghostKitchen-lead.jpg";
-import checkIsMobile from "../mixin/checkIsMobile";
+import ghostKitchen from '../assets/ghostKitchen-lead.jpg';
+import checkIsMobile from '../mixin/checkIsMobile';
 
 export default {
   mixins: [checkIsMobile],
   data: () => ({
-    ghostKitchenUrl: ghostKitchen
+    ghostKitchenUrl: ghostKitchen,
   }),
   methods: {
-    slideTo(id = "") {
+    slideTo(id = '') {
       const appBarHeight = this.mixinIsMobile ? 56 : 64;
       console.log(appBarHeight, this.mixinIsMobile);
       const elePosition = document.querySelector(id).getBoundingClientRect()
@@ -35,10 +36,10 @@ export default {
 
       window.scrollTo({
         top: scrollPosition,
-        behavior: "smooth"
+        behavior: 'smooth',
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -64,5 +65,3 @@ export default {
   }
 }
 </style>
-
-

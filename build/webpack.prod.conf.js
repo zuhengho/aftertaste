@@ -48,7 +48,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
     }),
@@ -60,8 +60,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         : { safe: true }
     }),
     // generate dist index.html with correct asset hash for caching.
-    // you can customize output by editing /index.html
-    // see https://github.com/ampedandwired/html-webpack-plugin
+    // you can customize output by editing /index.htmlhttps://github.com/ampedandwired/html-webpack-plugin
+    // see
     new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
@@ -76,7 +76,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'dependency',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1.0',
+        description: `Aftertaste cloud kitchen provides optimised shared service for restaurants that operate food deliveries. Grow your restaurant at prime locations at a fraction of the normal startup costs.`,
+
+
+      },
+      title: 'Aftertaste Cloud Kitchen | Specialised in Food Delivery',
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
